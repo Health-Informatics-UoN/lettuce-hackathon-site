@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Query Augmentation</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .auth-container {
+      background-color: rgba(250, 235, 215, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      height: 90%;
+    }
+
+    .image-container {
+      background-image: url("assets/query-augmentation.jpg");
+      background-size: cover;
+      width: 80%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 1000px;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Query Augmentation</h1>
+  <div class="image-container">
+    <div class="auth-container">
+      <h2>Queries to Lettuce shouldn't return what the user asks for, but what they want. Can we augment their queries
+        to get closer?</h2>
+      <p>Currently, Lettuce queries the database first, then uses what it retrieves to inform the LLM. Perhaps it would
+        be better to turn this on its head.</p>
+      <p>Search engines have <a href="https://en.wikipedia.org/wiki/Query_expansion">modified user queries</a> for a
+        long time to improve information retrieval. Can we get an LLM to <a
+          href="https://akash-mathur.medium.com/advanced-rag-query-augmentation-for-next-level-search-using-llamaindex-d362fed7ecc3">rewrite
+          user queries</a> so that search output is
+        improved? Just removing irrelevant material from self-reported medications will help short-term, but this could
+        be an invaluable approach as Lettuce handles more complex input.</p>
+      <a href="index.html">Take me back to the start</a>
+      <br>
+      <a href="all-projects.html">Show me all the projects</a>
+    </div>
+  </div>
+</body>
+
+</html>

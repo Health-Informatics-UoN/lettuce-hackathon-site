@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lettuce Interactive graphs</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .auth-container {
+      background-color: rgba(250, 235, 215, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      height: 90%;
+    }
+
+    .image-container {
+      background-image: url("assets/interactive-graph.jpg");
+      background-size: cover;
+      width: 80%;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 1000px;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Interactive local graphs</h1>
+  <div class="image-container">
+    <div class="auth-container">
+      <h2>Sometimes Lettuce finds a related concept to the one we want. Can we make an interactive tool to explore a
+        concept's local graph to find the right concept?</h2>
+      <p>In the OMOP common data model, there are two tables describing relationships between concepts, the
+        <tt>concept_relationship</tt> and <tt>concept_hierarchy</tt> tables. We have an <a
+          href="https://github.com/Health-Informatics-UoN/omop-relationship-graph">API</a>to retrieve a concept's local
+        graph, and some javascript for visualising that graph. If you're a smarter javascript dev than the original
+        author, you could make it a useful part of Lettuce's user interface.</p>
+      <br>
+      <p>If a user could click on a related concept in the graph, and then is shown that concept's local graph, users
+        could explore related concepts. It could also be useful to select a desired concept.</p>
+      <a href="index.html">Take me back to the start</a>
+      <br>
+      <a href="all-projects.html">Show me all the projects</a>
+    </div>
+  </div>
+</body>
+
+</html>
