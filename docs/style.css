@@ -1,116 +1,119 @@
-/* style.css */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #81C784;
+    --background-color: #F8F8FF;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Center horizontally */
-  min-height: 100vh;
-  /* Ensure full viewport height */
-  margin: 0;
-  background-color: #F8F8FF
+    font-family: 'Courier', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-h1,
-h2 {
-  text-align: center;
-  /* Center headings */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.main-title {
-  font-size: 5em;
-  color: #597;
-  /*filter: drop-shadow(5px 3px 5px #555);*/
+.header {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    margin-bottom: 30px;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* Allow wrapping to new lines */
-  justify-content: center;
-  /* Center horizontally */
-  gap: 20px;
-  /* Spacing between items */
-  max-width: 1000px;
-  /* Limit container width for larger screens */
-  margin-bottom: 20px;
-  /* Space below the grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.card {
-  width: 400px;
-  /* Fixed width for each card */
-  height: 250px;
-  /* Fixed height for each card */
-  border: 1px solid #ccc;
-  /* Light gray border */
-  border-radius: 8px;
-  /* Rounded corners */
-  overflow: hidden;
-  /* Hide overflowing content */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* Center content horizontally */
-  text-align: center;
-  /* Center text within card */
-  padding: 10px;
-  box-sizing: border-box;
-  /* Include padding in width/height */
-  transition: transform 0.2s;
-  /* Add a transition for hover effect */
-  background-color: #FAEBD7;
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  /* Slightly enlarge on hover */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  /* Add a subtle shadow on hover */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-
-.card img {
-  max-width: 150px;
-  max-height: 150px;
-  margin-bottom: 10px;
-  object-fit: cover;
-  /* Makes sure the image fills the container without stretching */
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
-.card p {
-  margin: 0;
-  /* Remove default paragraph margins */
-  font-weight: bold;
-}
-
-.card a {
-  text-decoration: none;
-  /* Remove underlines from links */
-  color: inherit;
-  /* Inherit color from parent */
-}
-
-/* Style for the "all projects" link */
-.project-link {
+.project-card img {
   display: block;
-  /* Make the link a block element */
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.project-details {
+    display: none;
+    margin-top: 15px;
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.project-links {
+  margin: auto;
+  width: 50%;
   text-align: center;
-  /* Center the link text */
-  margin-top: 20px;
 }
 
-a {
-  color: #444;
-  text-decoration: none;
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    text-align: justify;
 }
 
-a:hover {
-  text-decoration: underline;
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
 }
 
-.blurb {
-  hyphens: auto;
-  max-width: 1000px;
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#modalTitle {
+  text-align: center;
+}
+
+#project-summary {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
