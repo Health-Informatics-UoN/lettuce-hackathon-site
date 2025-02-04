@@ -13,23 +13,34 @@
         </div>
 
         <div id="project-summary">
-          <p>Lettuce is coming to the HDR UK and ELIXIR joint Hackathon! We've got a few parts to the project that you could help with. The focus of the project will be to run Lettuce in a federated setting and evaluate outputs across nodes in the federation, but whether you're good at making fancy visualisations for the front-end or wrangling data on the back-end, we have projects for you!</p>
+        <p>Lettuce is coming to the HDR UK and ELIXIR joint Hackathon! We've got a few parts to the project that you could help with. <u>The focus of the project will be to run Lettuce in a federated setting and evaluate outputs across nodes in the federation</u>, but whether you're good at making fancy visualisations for the front-end or wrangling data on the back-end, we have projects for you!</p>
           <br>
           <p style="text-align:center">Choose a project to see more details</p>
+          <details>
+          <summary style="font-size:0.5; color:lightgray;">What's with the pictures?</summary>
+          The first version of this website had a "Choose your own adventure" theme, and I couldn't bear to get rid of it entirely, so you have to put up with some fantasy images
+        </details>
         </div>
 
         <div class="projects-grid">
             <div class="project-card" data-project="federated-eval">
-                <h3>Federated Evaluation of Models</h3>
-                <img src="assets/llm-fine-tuning.jpg" width="80%">
+                <h3>Federated Model Evaluation</h3>
+                <img src="assets/llm-fine-tuning.jpg" width="80%" alt="A sorcerer taming an unruly spirit with a network of lettuces">
                 <div class="project-details">
-                    <p>Explore how different machine learning models can be evaluated across distributed datasets.</p>
+                  <b><p>Can we see how well Lettuce is doing in a way that preserves privacy?</p></b>
+                  <br>
+                  <p>
+                  Lettuce will run inside trusted research environments.
+                  Sometimes, users will need to keep the data they send to Lettuce private, which is why it runs locally.
+                  However, as Lettuce pipelines change, it would be useful for users to be able to check whether other deployments of Lettuce perform well on their datasets, while keeping their data private.
+                  Can we use BitFount's platform to run evaluations on Lettuce tasks and preserve privacy?
+                  </p>
                 </div>
             </div>
 
             <div class="project-card" data-project="reciprocal-rank">
                 <h3>Reciprocal Rank Fusion</h3>
-                <img src="assets/reciprocal-rank-fusion.jpg">
+                <img src="assets/reciprocal-rank-fusion.jpg" alt="An armoured figure guarding a database, fusing forces of order and chaos">
                 <div class="project-details">
                     <b><p>Both vector search and string matching are useful for finding concepts. Can we get them to work together?</p></b>
                     <br>
@@ -39,7 +50,7 @@
 
             <div class="project-card" data-project="concept-graph">
                 <h3>Interactive Concept Graph</h3>
-                <img src="assets/interactive-graph.jpg" width="80%">
+                <img src="assets/interactive-graph.jpg" width="80%" alt="A whimsical bard designing a graph interface">
                 <div class="project-details">
                     <b><p>Sometimes Lettuce finds a related concept to the one we want. Can we make an interactive tool to explore a concept's local graph?</p></b>
                     <br>
@@ -49,7 +60,7 @@
 
             <div class="project-card" data-project="structured-logs">
                 <h3>Structured Event Logging</h3>
-                <img src="assets/observability.jpg" width="80%">
+                <img src="assets/observability.jpg" width="80%" alt="Two robed figures working together to make a database of logs for a lettuce">
                 <div class="project-details">
                     <b><p>What's Lettuce doing? We need structured event logs that we can query!</p></b>
                     <br>
