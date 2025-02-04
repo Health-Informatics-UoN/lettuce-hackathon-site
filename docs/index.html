@@ -42,9 +42,13 @@
                 <h3>Reciprocal Rank Fusion</h3>
                 <img src="assets/reciprocal-rank-fusion.jpg" alt="An armoured figure guarding a database, fusing forces of order and chaos">
                 <div class="project-details">
-                    <b><p>Both vector search and string matching are useful for finding concepts. Can we get them to work together?</p></b>
-                    <br>
-                    <p>We have found that using similarity of text embeddings for concept names is a superior method for information retrieval to string-matching approaches. That doesn't mean that string-matching is useless, however. Reciprocal rank fusion uses the ranking of multiple retrieval mechanisms to combine information retrieval pipelines.</p>
+                  <p><b>Both vector search and string matching are useful for finding concepts. Can we get them to work together?</b></p>
+                  <br>
+                  <p>We have found that using similarity of text embeddings for concept names is a superior method for information
+                  retrieval to string-matching approaches. That doesn't mean that string-matching is useless, however. Reciprocal
+                  rank fusion uses the ranking of multiple retrieval mechanisms to combine information retrieval pipelines.
+                  Conveniently, this can be <a href="https://anyblockers.com/posts/postgres-as-a-search-engine#table-with-four-legs">carried out in-database</a>,
+                  and could be a useful approach to our retrieval-augmented generation pipelines.</p>
                 </div>
             </div>
 
@@ -52,9 +56,16 @@
                 <h3>Interactive Concept Graph</h3>
                 <img src="assets/interactive-graph.jpg" width="80%" alt="A whimsical bard designing a graph interface">
                 <div class="project-details">
-                    <b><p>Sometimes Lettuce finds a related concept to the one we want. Can we make an interactive tool to explore a concept's local graph?</p></b>
+                    <p><b>Sometimes Lettuce finds a related concept to the one we want. Can we make an interactive tool to explore a concept's local graph to find the right concept?</b></p>
                     <br>
-                    <p>In the OMOP common data model, there are two tables describing relationships between concepts. We want to create a tool that allows users to explore related concepts through an interactive graph.</p>
+                    <p>In the OMOP common data model, there are two tables describing relationships between concepts, the
+                    <tt>concept_relationship</tt> and <tt>concept_hierarchy</tt> tables. We have an
+                    <a href="https://github.com/Health-Informatics-UoN/omop-relationship-graph">API</a> to retrieve a concept's local
+                    graph, and some javascript for visualising that graph. If you're a smarter javascript dev than the original
+                    author, you could make it a useful part of Lettuce's user interface.</p>
+                    <br>
+                    <p>If a user could click on a related concept in the graph, and then is shown that concept's local graph, users
+                    could explore related concepts. It could also be useful to select a desired concept.</p>
                 </div>
             </div>
 
@@ -62,9 +73,14 @@
                 <h3>Structured Event Logging</h3>
                 <img src="assets/observability.jpg" width="80%" alt="Two robed figures working together to make a database of logs for a lettuce">
                 <div class="project-details">
-                    <b><p>What's Lettuce doing? We need structured event logs that we can query!</p></b>
-                    <br>
-                    <p>Currently, Lettuce keeps some log files, but they're only so useful. We hope to store events in a database to track user interactions and improve the system.</p>
+                  <p><b>What's Lettuce doing? There are logs, but structured event logs that we can query would be so much more powerful!</b></p>
+                  <br>
+                  <p>Currently, Lettuce keeps some log files, but they're only so useful. If we could keep structured logs, we can
+                  take user interactions and use them to improve Lettuce.
+                  We hope to store events in a database so we can check whether users accept Lettuce's suggestions for concepts,
+                  perhaps which concept they select instead, and maybe even get insights from how users decide.
+
+                  All of this could be used to train later versions of Lettuce, and to improve how Lettuce can help users!</p>
                 </div>
             </div>
         </div>
