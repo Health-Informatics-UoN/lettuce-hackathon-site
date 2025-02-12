@@ -1,137 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lettuce Hackathon Projects</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lettuce Hackathon Projects</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Lettuce Hackathon Projects</h1>
-        </div>
-
-        <div id="project-summary">
-        <p>Lettuce is coming to the HDR UK and ELIXIR joint Hackathon! We've got a few parts to the project that you could help with. <u>The focus of the project will be to run Lettuce in a federated setting and evaluate outputs across nodes in the federation</u>, but whether you're good at making fancy visualisations for the front-end or wrangling data on the back-end, we have projects for you!</p>
-          <br>
-          <p style="text-align:center">Choose a project to see more details</p>
-          <details>
-          <summary style="font-size:0.5; color:lightgray;">What's with the pictures?</summary>
-          The first version of this website had a "Choose your own adventure" theme, and I couldn't bear to get rid of it entirely, so you have to put up with some fantasy images
-        </details>
-        </div>
-
-        <div class="projects-grid">
-            <div class="project-card" data-project="federated-eval">
-                <h3>Federated Model Evaluation</h3>
-                <img src="assets/llm-fine-tuning.jpg" width="80%" alt="A sorcerer taming an unruly spirit with a network of lettuces">
-                <div class="project-details">
-                  <b><p>Can we see how well Lettuce is doing in a way that preserves privacy?</p></b>
-                  <br>
-                  <p>
-                  Lettuce will run inside trusted research environments.
-                  Sometimes, users will need to keep the data they send to Lettuce private, which is why it runs locally.
-                  However, as Lettuce pipelines change, it would be useful for users to be able to check whether other deployments of Lettuce perform well on their datasets, while keeping their data private.
-                  Can we use BitFount's platform to run evaluations on Lettuce tasks and preserve privacy?
-                  </p>
-                </div>
-            </div>
-
-            <div class="project-card" data-project="reciprocal-rank">
-                <h3>Reciprocal Rank Fusion</h3>
-                <img src="assets/reciprocal-rank-fusion.jpg" alt="An armoured figure guarding a database, fusing forces of order and chaos">
-                <div class="project-details">
-                  <p><b>Both vector search and string matching are useful for finding concepts. Can we get them to work together?</b></p>
-                  <br>
-                  <p>We have found that using similarity of text embeddings for concept names is a superior method for information
-                  retrieval to string-matching approaches. That doesn't mean that string-matching is useless, however. Reciprocal
-                  rank fusion uses the ranking of multiple retrieval mechanisms to combine information retrieval pipelines.
-                  Conveniently, this can be <a href="https://anyblockers.com/posts/postgres-as-a-search-engine#table-with-four-legs">carried out in-database</a>,
-                  and could be a useful approach to our retrieval-augmented generation pipelines.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-project="concept-graph">
-                <h3>Interactive Concept Graph</h3>
-                <img src="assets/interactive-graph.jpg" width="80%" alt="A whimsical bard designing a graph interface">
-                <div class="project-details">
-                    <p><b>Sometimes Lettuce finds a related concept to the one we want. Can we make an interactive tool to explore a concept's local graph to find the right concept?</b></p>
-                    <br>
-                    <p>In the OMOP common data model, there are two tables describing relationships between concepts, the
-                    <tt>concept_relationship</tt> and <tt>concept_hierarchy</tt> tables. We have an
-                    <a href="https://github.com/Health-Informatics-UoN/omop-relationship-graph">API</a> to retrieve a concept's local
-                    graph, and some javascript for visualising that graph. If you're a smarter javascript dev than the original
-                    author, you could make it a useful part of Lettuce's user interface.</p>
-                    <br>
-                    <p>If a user could click on a related concept in the graph, and then is shown that concept's local graph, users
-                    could explore related concepts. It could also be useful to select a desired concept.</p>
-                </div>
-            </div>
-
-            <div class="project-card" data-project="structured-logs">
-                <h3>Structured Event Logging</h3>
-                <img src="assets/observability.jpg" width="80%" alt="Two robed figures working together to make a database of logs for a lettuce">
-                <div class="project-details">
-                  <p><b>What's Lettuce doing? There are logs, but structured event logs that we can query would be so much more powerful!</b></p>
-                  <br>
-                  <p>Currently, Lettuce keeps some log files, but they're only so useful. If we could keep structured logs, we can
-                  take user interactions and use them to improve Lettuce.
-                  We hope to store events in a database so we can check whether users accept Lettuce's suggestions for concepts,
-                  perhaps which concept they select instead, and maybe even get insights from how users decide.
-
-                  All of this could be used to train later versions of Lettuce, and to improve how Lettuce can help users!</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="projectModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2 id="modalTitle"></h2>
-                <div id="modalDescription"></div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Lettuce Hackathon Projects</h1>
     </div>
-    <div class="project-links">
-      <a href="https://health-informatics-uon.github.io/lettuce/">
-        🥬 📖 Show me the Lettuce docs
-      </a>
+
+    <div id="project-summary">
+      <p>Lettuce is coming to the HDR UK and ELIXIR joint Hackathon! We've got a few parts to the project that you could
+        help with. <u>The focus of the project will be to run Lettuce in a federated setting and evaluate outputs across
+          nodes in the federation</u>.</p>
       <br>
-      <a href="https://github.com/health-informatics-uon/lettuce">
-        🥬 💾 Show me the code
-      </a>
+      <p style="text-align:center">Choose a project to see more details</p>
+      <details>
+        <summary style="font-size:0.5; color:lightgray;">What's with the pictures?</summary>
+        The first version of this website had a "Choose your own adventure" theme, and I couldn't bear to get rid of it
+        entirely, so you have to put up with some fantasy images
+      </details>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectCards = document.querySelectorAll('.project-card');
-            const modal = document.getElementById('projectModal');
-            const closeBtn = document.querySelector('.close-btn');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalDescription = document.getElementById('modalDescription');
 
-            projectCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const projectDetails = card.querySelector('.project-details');
-                    const title = card.querySelector('h3').textContent;
-                    const description = projectDetails.innerHTML;
+    <div class="projects-grid">
+      <div class="project-card" data-project="federated-eval">
+        <h3>Federated Model Evaluation</h3>
+        <img src="assets/llm-fine-tuning.jpg" width="80%"
+          alt="A sorcerer taming an unruly spirit with a network of lettuces">
+        <div class="project-details">
+          <b>
+            <p>Can we see how well Lettuce is doing in a way that preserves privacy?</p>
+          </b>
+          <br>
+          <p>
+            Lettuce will run inside trusted research environments.
+            Sometimes, users will need to keep the data they send to Lettuce private, which is why it runs locally.
+            However, as Lettuce pipelines change, it would be useful for users to be able to check whether other
+            deployments of Lettuce perform well on their datasets, while keeping their data private.
+            Can we use BitFount's platform to run evaluations on Lettuce tasks and preserve privacy?
+          </p>
+        </div>
+      </div>
 
-                    modalTitle.textContent = title;
-                    modalDescription.innerHTML = description;
-                    modal.style.display = 'block';
-                });
-            });
+      <div class="project-card" data-project="structured-logs">
+        <h3>Structured Event Logging</h3>
+        <img src="assets/observability.jpg" width="80%"
+          alt="Two robed figures working together to make a database of logs for a lettuce">
+        <div class="project-details">
+          <p><b>What's Lettuce doing? There are logs, but structured event logs that we can query would be so much more
+              powerful!</b></p>
+          <br>
+          <p>Currently, Lettuce keeps some log files, but they're only so useful. If we could keep structured logs, we
+            can
+            take user interactions and use them to improve Lettuce.
+            We hope to store events in a database so we can check whether users accept Lettuce's suggestions for
+            concepts,
+            perhaps which concept they select instead, and maybe even get insights from how users decide.
 
-            closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
+            All of this could be used to train later versions of Lettuce, and to improve how Lettuce can help users!</p>
+        </div>
+      </div>
+    </div>
 
-            window.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <div id="modalDescription"></div>
+      </div>
+    </div>
+  </div>
+  <div class="project-links">
+    <a href="https://health-informatics-uon.github.io/lettuce/">
+      🥬 📖 Show me the Lettuce docs
+    </a>
+    <br>
+    <a href="https://github.com/health-informatics-uon/lettuce">
+      🥬 💾 Show me the code
+    </a>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const projectCards = document.querySelectorAll('.project-card');
+      const modal = document.getElementById('projectModal');
+      const closeBtn = document.querySelector('.close-btn');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const projectDetails = card.querySelector('.project-details');
+          const title = card.querySelector('h3').textContent;
+          const description = projectDetails.innerHTML;
+
+          modalTitle.textContent = title;
+          modalDescription.innerHTML = description;
+          modal.style.display = 'block';
         });
-    </script>
+      });
+
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
