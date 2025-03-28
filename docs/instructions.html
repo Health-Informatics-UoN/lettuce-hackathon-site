@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lettuce Hackathon Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Hackathon instructions</h1>
+    </div>
+    <div>
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>git</li>
+        <li><a href="https://docs.astral.sh/uv/">uv</a> to handle dependencies</li>
+        <li>A copy of the <a
+            href="https://uniofnottm-my.sharepoint.com/:u:/g/personal/james_mitchell-white1_nottingham_ac_uk/Ecej0aWSp4xBmbiycl3hwPQBbnVakyZi07EMyi3UvA5IOA?e=9qeI4X">vector
+            database</a></li>
+        <li>A copy of the OMOP vocabularies <a href="">in an sqlite database</a></li>
+      </ul>
+    </div>
+    <br>
+    <div>
+      First, we've made a minimal Lettuce setup which you can clone from <a
+        href="https://github.com/health-informatics-uon/lettuce-inspector">here</a>.
+      There are a couple of examples of how to run pipelines in this way in <tt>/examples</tt>.
+      <br>
+      The code in the repository assumes you have a vector database, and the OMOP vocabularies in a sqlite database.
+      The .zip archive of the vector database should be unzipped into <tt>/chroma_db</tt> so that the repo's directory
+      has <tt>/chroma_db/chroma_db.sqlite</tt> and auxiliary files.
+      The OMOP vocabs database should be copied into the top-level directory of lettuce-inspector.
+      <br>
+      The vector database contains embeddings, but only for concepts that are Drugs and standard OMOP concepts.
+      You would not believe how hard I worked to make a vector database that I could share as a file, and a limitation
+      of what I arrived at is that we can only have a limited set of concept embeddings.
+    </div>
+  </div>
+</body>
+
+</html>
